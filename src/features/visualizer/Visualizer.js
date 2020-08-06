@@ -12,10 +12,10 @@ function UsernameForm(props){
     const history = useHistory();
     const dispatch = useDispatch()
     const loading = useSelector(state=>state.visualizer.loading)
-    const [username, setUsername] = useState(props.match.params.username)
+    const [username, setUsername] = useState(props.match.params.username || '')
     const handleChange = event => setUsername(event.target.value)
     const handleSubmit = (username) => {
-        history.push(username)
+        history.push(`/github-visualizer/${username}`)
     }
     useEffect(()=>{
         if(!username) dispatch(clearValues())
