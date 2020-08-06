@@ -14,6 +14,10 @@ export const counterSlice = createSlice({
     toggleLoading: state => {
       state.loading = !state.loading;
     },
+    clearValues: state => {
+      state.profile = null;
+      state.repo = []
+    },
     setusername: (state, action) => {
       state.username = action.payload;
     },
@@ -26,7 +30,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { toggleLoading, setusername, setrepo, setprofile } = counterSlice.actions;
+export const { toggleLoading, setusername, setrepo, setprofile, clearValues } = counterSlice.actions;
 
 export const getAndSetUsername = username => dispatch => {
     dispatch(toggleLoading())
