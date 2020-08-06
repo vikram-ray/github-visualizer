@@ -1,21 +1,3 @@
-// created_at
-// description
-// name
-// stargazers_count
-// homepage
-// language
-
-// Total starts in profile
-
-//watchers_count
-// clone_url
-// https://api.github.com/repos/rayvikram/GoogleMeet-Clone-With-WebRTC/languages
-// license
-// open_issues_count
-// forks_count
-// updated at
-
-
 export const getRandomColor = () => `#${Math.floor(Math.random()*16777215).toString(16)}`;
 
 // parse data for creating chart
