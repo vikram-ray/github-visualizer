@@ -16,16 +16,19 @@ const ProfileDetails = ({data}) => {
 }
 
 export default function({data, repoData}){
+
+    const {parsedRepoData, totalStars} = parseRepoData(repoData)
     return <Row>
             <Col sm={2}>
                 <Image src={data.avatar_url} roundedCircle fluid />
                 <p className="text-center" >{data.login}</p>
+                <p className="text-center" >{`Total stars: ${totalStars}`}</p>
             </Col>
             <Col sm={4} >
                 <ProfileDetails data={data} />
             </Col>
             <Col sm={6} >
-                <DoughnutChart data={parseRepoData(repoData)} title="Projects" />
+                <DoughnutChart data={parsedRepoData} title="Projects" />
             </Col>
             <hr></hr>
     </Row>

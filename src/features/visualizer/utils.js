@@ -21,7 +21,9 @@ export const getRandomColor = () => `#${Math.floor(Math.random()*16777215).toStr
 // parse data for creating chart
 export const parseRepoData = data => {
     const languages = {}
+    let totalStars = 0
     data.forEach(eachRepo=>{
+        totalStars+=eachRepo.stargazers_count
         const language = eachRepo.language
         if (!(languages.hasOwnProperty(language))){
             languages[language] = 0
@@ -49,6 +51,7 @@ export const parseRepoData = data => {
         chartData.datasets[0].hoverBackgroundColor.push(getRandomColor())
 
       }
-    return chartData
+
+    return { parsedRepoData: chartData, totalStars } 
 }
 
