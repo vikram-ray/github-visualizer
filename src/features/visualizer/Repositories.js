@@ -29,8 +29,8 @@ Last Update: ${dateParser(item.updated_at.substring(0,10))}
 `
           return (<tr key={item.name} >
             <td>{idx+1}</td>
-          <td>{item.homepage?<a href={item.homepage} >{item.name}</a>:item.name}</td>
-          <td><a title={title} href={item.html_url} > {item.description || `View repository`}</a></td>
+          <td>{item.homepage?<a target='_blank' href={item.homepage} >{item.name}</a>:item.name}</td>
+          <td><a title={title}  target='_blank' href={item.html_url} > {item.description || `View repository`}</a></td>
             <td>{item.language}</td>
         </tr>)
       })}
